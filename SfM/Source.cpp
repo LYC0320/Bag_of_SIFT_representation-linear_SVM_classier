@@ -128,15 +128,6 @@ int main()
 				histogram.at<int>(i, clusters.at<int>(j + pointCount, 0))++;
 			}
 
-			// normalized
-			//for (int jF = 0; jF < clusterNum; jF++)
-			//{
-			//	length += histogram.at<int>(i, jF)*histogram.at<int>(i, jF);
-			//}
-
-			// normalized
-			//length = sqrtf(length);
-
 			pointCount += KeypointNum[i + pictureCount];
 
 			for (int jF = 0; jF < clusterNum; jF++)
@@ -156,8 +147,6 @@ int main()
 
 		pictureCount += 100;
 
-		// normalized
-		//length = 0;
 	}
 
 	cout << "histogram done" << endl;
@@ -329,26 +318,6 @@ int main()
 					testDataH[minCenterIndex[i]]++;
 				}
 			}
-
-
-
-			// normalized
-			//float length2 = 0;
-
-			//for (int i = 0; i < clusterNum; i++)
-			//{
-			//	length2 += testDataH[i] * testDataH[i];
-			//}
-
-			//length2 = sqrtf(length2);
-
-			//for (int i = 0; i < clusterNum; i++)
-			//{
-			//	testDataH[i] = testDataH[i] / length2;
-			//}
-			// normalized
-
-
 
 			Mat testHistogram(1, clusterNum, CV_32FC1, testDataH);
 
